@@ -1,0 +1,124 @@
+@import "tailwindcss";
+
+:root {
+  --background: #f8f7f4;
+  --foreground: #1c1917;
+  --text-secondary: #78716c;
+  --text-tertiary: #a8a29e;
+  --border-color: #e7e5e4;
+
+  --region-pfc: #8b5cf6;
+  --region-pfc-tint: #f5f3ff;
+  --region-po: #0ea5e9;
+  --region-po-tint: #f0f9ff;
+  --region-temporal: #ec4899;
+  --region-temporal-tint: #fdf2f8;
+  --region-cerebellum: #10b981;
+  --region-cerebellum-tint: #ecfdf5;
+
+  --ease-snappy: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-secondary: var(--text-secondary);
+  --color-tertiary: var(--text-tertiary);
+  --color-border: var(--border-color);
+
+  --color-pfc: var(--region-pfc);
+  --color-pfc-tint: var(--region-pfc-tint);
+  --color-po: var(--region-po);
+  --color-po-tint: var(--region-po-tint);
+  --color-temporal: var(--region-temporal);
+  --color-temporal-tint: var(--region-temporal-tint);
+  --color-cerebellum: var(--region-cerebellum);
+  --color-cerebellum-tint: var(--region-cerebellum-tint);
+
+  --font-sans: var(--font-inter);
+  --font-serif-display: var(--font-instrument-serif);
+
+  --ease-snappy: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+* {
+  border-color: var(--border-color);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+}
+
+/* Custom cursor: hide the system cursor on devices with a fine pointer */
+@media (hover: hover) and (pointer: fine) {
+  html,
+  body,
+  a,
+  button,
+  [role="button"] {
+    cursor: none;
+  }
+}
+
+::selection {
+  background: var(--region-pfc);
+  color: #ffffff;
+}
+
+.cursor-ring {
+  transition-property: width, height, border-width, background-color, border-color, border-radius;
+  transition-duration: 350ms;
+  transition-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes cursor-pulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.65;
+  }
+}
+
+.animate-cursor-pulse {
+  animation: cursor-pulse 1.3s ease-in-out infinite;
+}
+
+@keyframes cursor-blink {
+  0%,
+  45% {
+    opacity: 1;
+  }
+  50%,
+  95% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.animate-cursor-blink {
+  animation: cursor-blink 1.1s step-end infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
