@@ -1,0 +1,8 @@
+Source: https://commons.wikimedia.org/wiki/File:Brain_diagram_without_text.svg
+Original artist: Mysid (vectorized from Gray's Anatomy, 20th U.S. edition, 1918)
+License: Public domain (published before 1931, derived from a public-domain edition
+of Gray's Anatomy)
+
+Colors, labels, and interactivity in this project were reworked from the original;
+the underlying silhouette and gyri/sulci linework are traced from the source file
+above, saved alongside this note as brain-diagram-wikimedia.svg.

@@ -1,13 +1,11 @@
-import Hero from "@/components/home/Hero";
-import BrainSection from "@/components/brain/BrainSection";
-import SkillsSection from "@/components/home/SkillsSection";
+import HeroBrainSection from "@/components/home/HeroBrainSection";
+import FooterCTA from "@/components/home/FooterCTA";
 
 export default function Home() {
   return (
     <>
-      <Hero />
-      <BrainSection />
-      <SkillsSection />
+      <HeroBrainSection />
+      <FooterCTA />
     </>
   );
 }
