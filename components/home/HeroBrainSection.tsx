@@ -78,6 +78,8 @@ export default function HeroBrainSection() {
   const particlesEnabled = useMediaQuery("(min-width: 768px)");
   const isMobile = useMediaQuery("(max-width: 767px)");
   const { rendered, done } = useTypewriter(HEADLINE, 60, !reducedMotion);
+  const hintText = isMobile ? "tap to explore" : "hover to explore";
+  const { rendered: hintRendered, done: hintDone } = useTypewriter(hintText, 28, !reducedMotion);
 
   const [hoveredRegion, setHoveredRegion] = useState<RegionId | null>(null);
   const [lockedRegion, setLockedRegion] = useState<RegionId | null>(null);
@@ -193,7 +195,13 @@ export default function HeroBrainSection() {
               data-cursor="text"
               className="pointer-events-none absolute right-1 top-0 font-sans text-[12px] font-light text-tertiary sm:right-3"
             >
-              {isMobile ? "tap to explore" : "hover to explore"}
+              {hintRendered}
+              <span
+                aria-hidden
+                className={`ml-0.5 inline-block h-[0.9em] w-[1.5px] translate-y-[0.05em] bg-tertiary align-middle ${
+                  hintDone ? "animate-cursor-blink" : "opacity-100"
+                }`}
+              />
             </p>
 
             <div className="pointer-events-none relative mt-6 md:absolute md:top-1/2 md:right-0 md:mt-0 md:w-[368px] md:-translate-y-1/2">
