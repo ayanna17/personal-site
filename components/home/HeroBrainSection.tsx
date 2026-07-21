@@ -81,17 +81,10 @@ export default function HeroBrainSection() {
 
   const [hoveredRegion, setHoveredRegion] = useState<RegionId | null>(null);
   const [lockedRegion, setLockedRegion] = useState<RegionId | null>(null);
-  const [hintVisible, setHintVisible] = useState(true);
   const brainAreaRef = useRef<HTMLDivElement>(null);
 
   const activeId = lockedRegion ?? hoveredRegion;
   const activeRegion = regions.find((r) => r.id === activeId) ?? null;
-
-  const [prevActiveId, setPrevActiveId] = useState(activeId);
-  if (activeId !== prevActiveId) {
-    setPrevActiveId(activeId);
-    if (activeId) setHintVisible(false);
-  }
 
   useEffect(() => {
     if (!lockedRegion) return;
@@ -196,14 +189,12 @@ export default function HeroBrainSection() {
               className="mx-auto h-auto w-full max-h-[60vh] max-w-[640px] md:mx-0 md:max-h-[72vh]"
             />
 
-            <motion.p
-              animate={{ opacity: hintVisible ? 1 : 0 }}
-              transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+            <p
               data-cursor="text"
               className="pointer-events-none absolute right-1 top-0 font-sans text-[12px] font-light text-tertiary sm:right-3"
             >
               {isMobile ? "tap to explore" : "hover to explore"}
-            </motion.p>
+            </p>
 
             <div className="pointer-events-none relative mt-6 md:absolute md:top-1/2 md:right-0 md:mt-0 md:w-[368px] md:-translate-y-1/2">
               <InfoPanel region={activeRegion} locked={Boolean(lockedRegion)} />
