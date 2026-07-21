@@ -9,7 +9,7 @@ const LINKS = [
   { href: "/writing", label: "writing" },
   { href: "/projects", label: "projects" },
   { href: "/inspo", label: "inspo" },
-  { href: "/resume.pdf", label: "resume", external: true },
+  { href: "/Varma%2C%20Ayanna%202026.pdf", label: "resume", external: true },
 ];
 
 export default function Nav() {

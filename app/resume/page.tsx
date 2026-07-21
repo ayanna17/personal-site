@@ -15,7 +15,7 @@ export default function ResumePage() {
         resume
       </motion.h1>
       <motion.a
-        href="/resume.pdf"
+        href="/Varma%2C%20Ayanna%202026.pdf"
         target="_blank"
         rel="noopener noreferrer"
         data-cursor="link"
