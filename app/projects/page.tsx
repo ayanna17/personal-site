@@ -18,7 +18,7 @@ export default function ProjectsPage() {
               title="Rally for Tennis"
               role="Co-Founder"
               years="2021–2025"
-              href="https://rallyfortennis.com"
+              href="https://newjersey.news12.com/greater-newark-tennis-and-education-3rd-annual-rally-for-tennis-fundraiser-event"
             >
               <div className="relative aspect-[16/11] overflow-hidden rounded-[32px] bg-[#eae7e2] p-8 sm:p-10 md:p-12">
                 <div className="relative h-full w-full">
